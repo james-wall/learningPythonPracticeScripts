@@ -1,3 +1,5 @@
+# Script inspired by "Authomate the Boring Stuff with Python"
+
 def collatz(number):
 	if number % 2 == 0:
 		return number // 2
