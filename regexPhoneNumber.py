@@ -1,7 +1,10 @@
+# Method to tell if there is one or more phone numbers is an input string
+# Country codes are not supported in this implementation
+
 import re
 
 def isPhoneNumber():
-	phoneNumberRegex = re.compile(r'\d{3}-\d{3}-\d{4}')
+	phoneNumberRegex = re.compile(r'(\d{3})?(-|.)?\d{3}(-|.)?\d{4}')
 	result = None
 	while(result == None):
 		try:
@@ -13,9 +16,10 @@ def isPhoneNumber():
 
 	if result == None:
 		print('No phone number found in the input.')
-		print('Make sure you enter a valid phone number in your input: ###-###-####')
 	else:
 		print('Phone number found! ' + result.group())
+		if len(result.group()) == 7 or len(result.group()) == 8: # No area code
+			print('Make sure you add an area code next time!')
 
 	print("Goodbye")
 		
