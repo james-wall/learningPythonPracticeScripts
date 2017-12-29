@@ -25,7 +25,6 @@ if args.directions:
 	else:
 		# Get address from clipboard
 		address = pyperclip.paste()
-		print(address)
 
 	# get user's current location.. TODO needs work on accuracy
 	freegeoip = "http://freegeoip.net/json"
