@@ -22,6 +22,6 @@ soup = bs4.BeautifulSoup(res.text, "html.parser")
 
 elems = soup.select(".r a")
 
-numOpen = min(5, len(elems))
+numOpen = min(5, len(elems)) # currently opens max of 5 tabs
 for i in range(numOpen):
 	webbrowser.open('http://google.com' + elems[i].get('href'))
