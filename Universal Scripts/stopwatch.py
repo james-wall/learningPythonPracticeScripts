@@ -16,7 +16,19 @@ try:
 		input()
 		lapTime = round(time.time() - lastTime, 2)
 		totalTime = round(time.time() - startTime, 2)
-		print('Lap #%s: %s (%s)' % (lapNum, totalTime, lapTime), end='')
+
+		numHours = 0
+		while totalTime > 3600:
+			numHours = numHours + 1
+			totalTime = totalTime - 3600
+
+		numMinutes = 0
+		while totalTime > 60:
+			numMinutes = numMinutes + 1
+			totalTime = totalTime - 60
+
+		totalTime = round(totalTime, 2)
+		print('Lap #%s: %s hours, %s minutes, %s seconds (%s seconds this lap)' % (lapNum, numHours, numMinutes, totalTime, lapTime), end='')
 		lapNum += 1
 		lastTime = time.time() # reset the last lap time
 except KeyboardInterrupt:
