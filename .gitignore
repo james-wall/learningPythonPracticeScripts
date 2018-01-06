@@ -103,3 +103,6 @@ ENV/
 # created text files
 
 *.txt
+
+# XKCD folder from scraping
+xkcd/
